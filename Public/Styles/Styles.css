@@ -3,7 +3,7 @@ body {
   font-size: 5vw;
 }
 #HomeBody {
-  background-image: url(/Images/TankBackground.png);
+  background-image: url(/public/Images/TankBackground.png);
 }
 
 section {
@@ -143,34 +143,34 @@ nav {
   filter: drop-shadow(0px 4px 6px #000000);
 }
 #UsaButton {
-  background-image: url(/Images/USA.png);
+  background-image: url(/public/Images/USA.png);
   width: 10vw;
   height: 5vw;
   alt: USA;
   background-size: 10vw 5vw;
 }
 #UkButton {
-  background-image: url(/Images/UK.svg);
+  background-image: url(/public/Images/UK.svg);
   alt: UK;
 }
 #RussiaButton {
-  background-image: url(/Images/Russia.png);
+  background-image: url(/public/Images/Russia.png);
   alt: Russia;
 }
 #FranceButton {
-  background-image: url(/Images/France.png);
+  background-image: url(/public/Images/France.png);
   alt: France;
 }
 #ItalyButton {
-  background-image: url(/Images/italy.png);
+  background-image: url(/public/Images/italy.png);
   alt: France;
 }
 #JapanButton {
-  background-image: url(/Images/japan.png);
+  background-image: url(/public/Images/japan.png);
   alt: France;
 }
 #GermanyButton {
-  background-image: url(/Images/Germany.webp);
+  background-image: url(/public/Images/Germany.webp);
   alt: France;
 }
 

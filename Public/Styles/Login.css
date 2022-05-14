@@ -1,0 +1,158 @@
+body {
+  background-color: #334d30;
+  margin: 0%;
+  font-size: 5vw;
+  color: white;
+  font-family: "Reem Kufi";
+}
+menu {
+  margin: 4vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#Login {
+  width: 25vw;
+  height: fit-content;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  display: flex;
+  align-content: flex-start;
+  font-size: 1vw;
+  background-color: #4a7856;
+  padding: 2vw;
+  border-radius: 1vw;
+  filter: drop-shadow(0px 2px 4px #000000);
+}
+
+section {
+  width: 25vw;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  display: flex;
+  align-content: flex-start;
+  font-size: 1vw;
+  background-color: #4a7856;
+  padding: 2vw;
+  border-radius: 1vw;
+  filter: drop-shadow(0px 2px 4px #000000);
+}
+section h2 {
+  background-color: #345830;
+  border-radius: 1vw;
+  padding: 0.25vw;
+  border: solid;
+  border-color: #1e3f20;
+  text-shadow: 1px 1px 3px #000000;
+  border-width: 0.5vw;
+  filter: drop-shadow(0px 2px 4px #000000);
+  width: 12vw;
+}
+
+section input {
+  background-color: #65885d;
+  padding: 1vw;
+  border-radius: 1vw;
+  width: 15vw;
+  filter: drop-shadow(0px 2px 4px #000000);
+
+  color: white;
+  font-size: 1vw;
+  text-shadow: 0px 1px 3px #000000;
+
+  border: none;
+  outline: none;
+}
+
+section button {
+  color: white;
+  text-shadow: 1px 1px 3px #000000;
+  font-family: "Reem Kufi";
+  background-color: #345830;
+  border-radius: 1vw;
+  padding: 0.25vw;
+  border: solid;
+  border-color: #1e3f20;
+  border-width: 0.5vw;
+  filter: drop-shadow(0px 2px 4px #000000);
+  width: 20vw;
+  font-size: 2vw;
+  padding: 1.5vh;
+  align-self: center;
+  margin: 0.5vw;
+}
+#UsaButton {
+  background-image: url(/public/Images/USA.png);
+  width: 10vw;
+  height: 5vw;
+  alt: USA;
+  background-size: 10vw 5vw;
+}
+#UkButton {
+  background-image: url(/public/Images/UK.svg);
+  alt: UK;
+}
+#RussiaButton {
+  background-image: url(/public/Images/Russia.png);
+  alt: Russia;
+}
+#FranceButton {
+  background-image: url(/public/Images/France.png);
+  alt: France;
+}
+#ItalyButton {
+  background-image: url(/public/Images/italy.png);
+  alt: France;
+}
+#JapanButton {
+  background-image: url(/public/Images/japan.png);
+  alt: France;
+}
+#GermanyButton {
+  background-image: url(/public/Images/Germany.webp);
+  alt: France;
+}
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.5% 0% 0.5% 0%;
+  width: 100%;
+  margin: 0px;
+  top: 0.5%;
+  z-index: 5;
+  position: sticky;
+  filter: drop-shadow(0px 4px 8px #000000);
+  background-color: #1e3f20;
+}
+nav a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.normalButton {
+  font-family: "Reem Kufi";
+
+  box-shadow: inset 0px 4px 4px #000000;
+  border-radius: 1vh;
+
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: 55%;
+  color: white;
+
+  background-color: #4a7856;
+}
+.imageButton {
+  width: 5vw;
+  height: 5vw;
+
+  margin: 0;
+
+  background-size: 5vw 5vw;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  z-index: 10;
+  filter: drop-shadow(0px 4px 6px #000000);
+}
