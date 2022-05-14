@@ -1,0 +1,194 @@
+body {
+  margin: 0%;
+  font-size: 5vw;
+}
+#HomeBody {
+  background-image: url(/Images/TankBackground.png);
+}
+
+section {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin: 2vh 2vw 2vh 2vw;
+}
+
+article {
+  box-shadow: inset 2px 4px 4px #000000;
+  display: flex;
+  flex-direction: column;
+  font-family: "Reem Kufi";
+  position: relative;
+  width: 15vw;
+  font-size: 35%;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 30vw;
+  background-color: #35502ed2;
+  border-radius: 1vh;
+}
+article h2 {
+  font-size: 80%;
+  background-color: #1e3f20;
+  color: #dcf3e2;
+  padding: 0px 2% 0px 2%;
+  filter: drop-shadow(1px 2px 3px #000000);
+  border-radius: 0.75vh;
+  margin-bottom: 0%;
+}
+#CenterArticle {
+  width: 25vw;
+}
+article img {
+  margin-top: 0%;
+  border-radius: 1vh;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0px 4px 8px #000000);
+  width: 95%;
+}
+#CenterImgArticle {
+  max-width: 75%;
+  padding-bottom: 1vh;
+}
+article p {
+  color: #000000;
+  margin-left: 0.5vw;
+  margin-top: 0px;
+  padding: 2px;
+  margin-bottom: 2px;
+  margin-right: 0.5vw;
+  font-size: 50%;
+  background-color: #407946be;
+  border-radius: 5%;
+  filter: drop-shadow(0px 4px 8px #000000);
+}
+#PaperBack {
+  filter: drop-shadow(2px 5px 8px #000000);
+  width: 60%;
+  height: 82%;
+  left: 20%;
+  top: 20%;
+  position: absolute;
+}
+header {
+  position: absolute;
+  left: 33.5%;
+  font-family: "Reem Kufi";
+  border-radius: 1vh;
+  background-color: #4a7856;
+  text-align: center;
+  border-style: solid;
+
+  border-width: 0.5vw;
+  border-color: #1a1f16;
+  color: white;
+  width: 30vw;
+  height: 8vw;
+  filter: drop-shadow(0px 4px 8px #000000);
+  z-index: 2;
+}
+#AmericaImgFlag {
+  width: 28vw;
+  position: relative;
+  max-width: 100%;
+  margin-top: 8.5%;
+  height: auto;
+  filter: drop-shadow(0px 4px 8px #000000);
+  border-radius: 10%;
+  z-index: 1;
+}
+
+header > div {
+  display: inline-block;
+  position: relative;
+  align-self: center;
+  top: 8%;
+  background-color: #1a1f16;
+  width: 95%;
+  z-index: 2;
+  height: 82.5%;
+}
+
+header h1 {
+  display: inline;
+  position: relative;
+  bottom: 8%;
+  text-align: center;
+  font-size: 80%;
+}
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.5% 0% 0.5% 0%;
+  width: 100%;
+  margin: 0px;
+  top: 0.5%;
+  z-index: 5;
+  position: sticky;
+  filter: drop-shadow(0px 4px 8px #000000);
+  background-color: #1e3f20;
+}
+.imageButton {
+  width: 5vw;
+  height: 5vw;
+
+  margin: 0;
+
+  background-size: 5vw 5vw;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  z-index: 10;
+  filter: drop-shadow(0px 4px 6px #000000);
+}
+#UsaButton {
+  background-image: url(/Images/USA.png);
+  width: 10vw;
+  height: 5vw;
+  alt: USA;
+  background-size: 10vw 5vw;
+}
+#UkButton {
+  background-image: url(/Images/UK.svg);
+  alt: UK;
+}
+#RussiaButton {
+  background-image: url(/Images/Russia.png);
+  alt: Russia;
+}
+#FranceButton {
+  background-image: url(/Images/France.png);
+  alt: France;
+}
+#ItalyButton {
+  background-image: url(/Images/italy.png);
+  alt: France;
+}
+#JapanButton {
+  background-image: url(/Images/japan.png);
+  alt: France;
+}
+#GermanyButton {
+  background-image: url(/Images/Germany.webp);
+  alt: France;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.normalButton {
+  font-family: "Reem Kufi";
+
+  box-shadow: inset 0px 4px 4px #000000;
+  border-radius: 1vh;
+
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: 55%;
+  color: white;
+
+  background-color: #4a7856;
+}
