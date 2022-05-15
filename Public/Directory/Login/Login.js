@@ -16,7 +16,7 @@ createAccount.addEventListener("click", () => {
   axios
     .post("/createAccount", user)
     .then((res) => {
-      window.location.href = "/Public/Directory/Login/User.html";
+      //  window.location.href = "/Public/Directory/Login/User.html";
 
       console.log(res.data);
     })
