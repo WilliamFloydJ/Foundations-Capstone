@@ -19,7 +19,20 @@ app.use("/server", express.static(path.join(__dirname, "../Server")));
 app.get("/public/Directory/User", User);
 
 app.use("/public", express.static(path.join(__dirname, "../Public")));
-app.get("/", Direct);
+app.get("/", (req, res) => {
+  var options = {
+    root: path.join(__dirname, "../../Public"),
+  };
+
+  var fileName = "index.html";
+  res.sendFile(fileName, options, function (err) {
+    if (err) {
+      rollbar.critical("Home Page will not load");
+    } else {
+      rollbar.info("Home page loaded Successfully");
+    }
+  });
+});
 
 app.post("/createAccount", Create);
 app.get("/login", Login);
