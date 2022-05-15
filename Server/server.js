@@ -19,10 +19,9 @@ app.use("/server", express.static(path.join(__dirname, "../Server")));
 app.get("/public/Directory/User", User);
 
 app.use("/public", express.static(path.join(__dirname, "../Public")));
-//app.get("/", Direct);
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../Public/index.html"));
-});
+
+app.get("/", Direct);
+
 app.post("/createAccount", Create);
 app.get("/login", Login);
 const port = process.env.PORT || 4199;
