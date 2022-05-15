@@ -14,7 +14,7 @@ const {
   Login,
 } = require("/server/Controllers/main.controller.js");
 
-app.use("/server", express.static(path.join(__dirname, "../../Server")));
+app.use("/server", express.static(path.join(__dirname, "../Server")));
 
 app.get("/public/Directory/User", User);
 
