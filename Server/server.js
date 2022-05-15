@@ -21,7 +21,7 @@ app.get("/public/Directory/User", User);
 app.use("/public", express.static(path.join(__dirname, "../Public")));
 app.get("/", (req, res) => {
   var options = {
-    root: path.join(__dirname, "../../Public"),
+    root: path.join(__dirname, "../Public"),
   };
 
   var fileName = "index.html";
