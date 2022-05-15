@@ -22,7 +22,7 @@ const sequelize = new Sequelize(process.env.CONNECTION_STRING, {
 
 module.exports = {
   User: (req, res) => {
-    if (currentUser.loggedIn) {
+    if (req.session?.user?.id) {
       var options = {
         root: path.join(__dirname, "../../Public/Directory/Login"),
       };
@@ -79,9 +79,11 @@ module.exports = {
               `insert into users(fullname,email,password) values('${fullName}', '${email}', '${hash}');`
             )
             .then((dbRes) => {
-              currentUser.loggedIn = true;
-              currentUser.email = email;
-              currentUser.fullName = fullName;
+              req.session.user = {
+                fullName: fullName,
+                email: email,
+                hash: hash,
+              };
               res.status(201).send("Account Created!");
             })
             .catch((err) => console.log(err));
