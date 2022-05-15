@@ -22,7 +22,8 @@ app.use("/public", express.static(path.join(__dirname, "../Public")));
 
 app.get("/", Direct);
 
-//app.post("/createAccount", Create);
+app.post("/createAccount", Create);
+
 app.get("/login", Login);
 const port = process.env.PORT || 4199;
 

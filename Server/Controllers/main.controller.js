@@ -12,14 +12,14 @@ var rollbar = new Rollbar({
 });
 
 let currentUser = { loggedIn: false, fullName: "", email: "" };
-// const sequelize = new Sequelize(CONNECTION_STRING, {
-//   dialect: "postgres",
-//   dialectOptions: {
-//     ssl: {
-//       rejectUnauthorized: false,
-//     },
-//   },
-// });
+const sequelize = new Sequelize(CONNECTION_STRING, {
+  dialect: "postgres",
+  dialectOptions: {
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
+});
 
 module.exports = {
   User: (req, res) => {
@@ -65,32 +65,32 @@ module.exports = {
       }
     });
   },
-  // Create: (req, res) => {
-  //   const { password, email, fullName } = req.body;
-  //   console.log(req.data);
-  //   let salt = bcrypt.genSaltSync(10);
-  //   let hash = bcrypt.hashSync(password, salt);
+  Create: (req, res) => {
+    const { password, email, fullName } = req.body;
+    console.log(req.data);
+    let salt = bcrypt.genSaltSync(10);
+    let hash = bcrypt.hashSync(password, salt);
 
-  //   sequelize
-  //     .query(`select email from users where email = '${email}'`)
-  //     .then((dbRes) => {
-  //       if (Object.keys(dbRes[0]).length === 0) {
-  //         sequelize
-  //           .query(
-  //             `insert into users(fullname,email,password) values('${fullName}', '${email}', '${hash}');`
-  //           )
-  //           .then((dbRes) => {
-  //             currentUser.loggedIn = true;
-  //             currentUser.email = email;
-  //             currentUser.fullName = fullName;
-  //             res.status(201).send("Account Created!");
-  //           })
-  //           .catch((err) => console.log(err));
-  //       } else {
-  //         res.status(200).send("Account with the same Email already exists.");
-  //       }
-  //     })
-  //     .catch((err) => console.log(err));
-  // },
+    sequelize
+      .query(`select email from users where email = '${email}'`)
+      .then((dbRes) => {
+        if (Object.keys(dbRes[0]).length === 0) {
+          sequelize
+            .query(
+              `insert into users(fullname,email,password) values('${fullName}', '${email}', '${hash}');`
+            )
+            .then((dbRes) => {
+              currentUser.loggedIn = true;
+              currentUser.email = email;
+              currentUser.fullName = fullName;
+              res.status(201).send("Account Created!");
+            })
+            .catch((err) => console.log(err));
+        } else {
+          res.status(200).send("Account with the same Email already exists.");
+        }
+      })
+      .catch((err) => console.log(err));
+  },
   Login: (req, res) => {},
 };
