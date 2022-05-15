@@ -36,6 +36,7 @@ module.exports = {
         }
       });
     } else {
+      console.log(req.session);
       var options = {
         root: path.join(__dirname, "../../Public/Directory/Login"),
       };
