@@ -36,7 +36,6 @@ module.exports = {
         }
       });
     } else {
-      console.log(req.session);
       var options = {
         root: path.join(__dirname, "../../Public/Directory/Login"),
       };
@@ -85,6 +84,7 @@ module.exports = {
                 email: email,
                 hash: hash,
               };
+              console.log(req.session);
               res.status(201).send("Account Created!");
             })
             .catch((err) => console.log(err));
