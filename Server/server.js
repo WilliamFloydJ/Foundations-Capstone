@@ -12,7 +12,9 @@ const {
   User,
   Create,
   Login,
-} = require("./Controllers/main.controller.js");
+} = require("/server/Controllers/main.controller.js");
+
+app.use("/server", express.static(path.join(__dirname, "../../Server")));
 
 app.get("/public/Directory/User", User);
 
