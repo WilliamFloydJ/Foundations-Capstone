@@ -12,14 +12,17 @@ var rollbar = new Rollbar({
 });
 
 let currentUser = { loggedIn: false, fullName: "", email: "" };
-const sequelize = new Sequelize(CONNECTION_STRING, {
-  dialect: "postgres",
-  dialectOptions: {
-    ssl: {
-      rejectUnauthorized: false,
+const sequelize = new Sequelize(
+  "postgres://dukrggvkqdznze:20b35400504d044ab7e378f96e5728b4ecd4f6483a4bdeed208b2ef8700f8e43@ec2-107-22-238-112.compute-1.amazonaws.com:5432/dfo0nejdng9qg6",
+  {
+    dialect: "postgres",
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: false,
+      },
     },
-  },
-});
+  }
+);
 
 module.exports = {
   User: (req, res) => {
