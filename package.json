@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "production": "nodemon Server/server.js"
+    "production": "nodemon Server/server.js",
+    "start": "node Server/server.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,8 @@
     "express": "^4.18.1",
     "express-session": "^1.17.3",
     "heroku": "^7.60.2",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
     "rollbar": "^2.25.0",
     "sequelize": "^6.19.0"
   }

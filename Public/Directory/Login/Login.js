@@ -13,4 +13,15 @@ createAccount.addEventListener("click", () => {
   let fullName = createFullName.value;
 
   let user = { fullName, email, password };
+  axios
+    .post("/createAccount", user)
+    .then((res) => {
+      window.location.href = "/Public/Directory/Login/User.html";
+
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log("Wrong Email");
+      console.log(err);
+    });
 });
