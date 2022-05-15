@@ -1,7 +1,7 @@
-require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 app.use(cors());
@@ -22,7 +22,7 @@ app.use("/public", express.static(path.join(__dirname, "../Public")));
 
 app.get("/", Direct);
 
-app.post("/createAccount", Create);
+//app.post("/createAccount", Create);
 app.get("/login", Login);
 const port = process.env.PORT || 4199;
 

@@ -2,23 +2,14 @@
   "name": "main",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/Server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "production": "nodemon Server/server.js",
     "start": "node Server/server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WilliamFloydJ/Foundations-Capstone.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/WilliamFloydJ/Foundations-Capstone/issues"
-  },
-  "homepage": "https://github.com/WilliamFloydJ/Foundations-Capstone#readme",
   "dependencies": {
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
