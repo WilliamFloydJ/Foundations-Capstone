@@ -4,13 +4,14 @@ require("dotenv").config();
 const path = require("path");
 
 var Rollbar = require("rollbar");
+const req = require("express/lib/request");
+const session = require("express-session");
 var rollbar = new Rollbar({
   accessToken: "6264237b5e0a4cdcace4911095f7eb63",
   captureUncaught: true,
   captureUnhandledRejections: true,
 });
 
-let currentUser = { loggedIn: false, fullName: "", email: "" };
 const sequelize = new Sequelize(process.env.CONNECTION_STRING, {
   dialect: "postgres",
   dialectOptions: {
@@ -66,33 +67,75 @@ module.exports = {
   },
   Create: (req, res) => {
     const { password, email, fullName } = req.body;
-    console.log(req.data);
+
     let salt = bcrypt.genSaltSync(10);
     let hash = bcrypt.hashSync(password, salt);
 
     sequelize
       .query(`select email from users where email = '${email}'`)
-      .then((dbRes) => {
-        if (Object.keys(dbRes[0]).length === 0) {
+      .then((dbRes1) => {
+        if (Object.keys(dbRes1[0]).length === 0) {
           sequelize
             .query(
-              `insert into users(fullname,email,password) values('${fullName}', '${email}', '${hash}');`
+              `insert into users(fullname,email,password) values('${fullName}', '${email}', '${hash}'); select userID from users where email = '${email}'`
             )
-            .then((dbRes) => {
+            .then((dbRes2) => {
               req.session.user = {
+                id: dbRes2[0][0].userid,
                 fullName: fullName,
                 email: email,
                 hash: hash,
               };
-              console.log(req.session);
-              res.status(201).send("Account Created!");
+              res.status(201).send({ message: "Account Created!", code: 200 });
             })
             .catch((err) => console.log(err));
         } else {
-          res.status(200).send("Account with the same Email already exists.");
+          res.status(200).send({
+            message: "Account with the same Email already exists.",
+            code: 400,
+          });
         }
       })
       .catch((err) => console.log(err));
+    console.log(req.session);
   },
-  Login: (req, res) => {},
+  Login: (req, res) => {
+    const { password, email } = req.body;
+    sequelize
+      .query(`select * from users where email = '${email}'`)
+      .then((dbRes) => {
+        if (Object.keys(dbRes[0]).length !== 0) {
+          if (bcrypt.compareSync(password, dbRes[0][0].password)) {
+            req.session.user = {
+              id: dbRes[0][0].userid,
+              fullName: dbRes[0][0].fullname,
+              email: email,
+              hash: dbRes[0][0].password,
+            };
+            res.status(200).send({ message: "Logging In", code: 200 });
+          } else {
+            res.status(200).send({
+              message: "You provided an incorrect password.",
+              code: 400,
+            });
+          }
+        } else {
+          res.status(200).send({
+            message:
+              "A user with that Email does not exist. If you have yet to create an account please do so on the panel to the left.",
+            code: 400,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(200).send({
+          message: "Query failed",
+          code: 400,
+        });
+      });
+  },
+  Session: (req, res) => {
+    res.status(200).send(req.session);
+  },
 };

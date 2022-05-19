@@ -23,6 +23,7 @@ const {
   User,
   Create,
   Login,
+  Session,
 } = require("./Controllers/main.controller.js");
 
 app.use("/server", express.static(path.join(__dirname, "./")));
@@ -35,7 +36,10 @@ app.get("/", Direct);
 
 app.post("/createAccount", Create);
 
-app.get("/login", Login);
+app.get("/server/session", Session);
+
+app.post("/login", Login);
+
 const port = process.env.PORT || 4199;
 
 app.listen(port, () => {
