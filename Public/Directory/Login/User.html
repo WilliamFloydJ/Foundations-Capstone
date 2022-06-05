@@ -25,11 +25,11 @@
       <a href="/public/Directory/FranceHome.html" target="_parent">
         <button class="imageButton" id="FranceButton"></button>
       </a>
-      <a href="/public/Directory/User" target="_parent">
+      <a href="/User" target="_parent">
         <button class="normalButton">User</button>
       </a>
 
-      <a href="/public/Directory/Stories.html">
+      <a href="/Stories">
         <button class="normalButton">Stories</button>
       </a>
       <a href="/">
@@ -47,13 +47,38 @@
     </nav>
 
     <menu>
-      <section id="sectionOne">
-        <h2 id="name"></h2>
+      <div>
+        <section id="sectionOne">
+          <p>Full Name:</p>
+          <h2 id="name"></h2>
+          <p>Email:</p>
+          <h3 id="email"></h3>
+        </section>
+        <section id="posts">
+          <button id="createPostButton">Create Post</button>
+          <p>Posts:</p>
+        </section>
+      </div>
+
+      <section id="sectionTwo">
+        <h1>Personal Info:</h1>
+        <div id="ageDiv">
+          <h2 class="personalInfo">Age:</h2>
+          <h3 id="age"></h3>
+        </div>
+        <div id="backgroundDiv">
+          <h2 class="personalInfo">Personal Background:</h2>
+          <h3 id="personalBackground" class="background"></h3>
+        </div>
+        <div id="rankDiv">
+          <h2 class="personalInfo">Rank: (If in the Military)</h2>
+
+          <h3 id="rank"></h3>
+        </div>
       </section>
-      <section id="sectionTwo"></section>
     </menu>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./User.js"></script>
+    <script src="/public/Directory/Login/User.js"></script>
   </body>
 </html>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="/public/Styles/Login.css" />
+    <title>Stories</title>
+    <link rel="stylesheet" href="/public/Styles/Stories.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Reem Kufi"
       rel="stylesheet"
@@ -45,29 +45,52 @@
         <button class="imageButton" id="GermanyButton"></button
       ></a>
     </nav>
+    <menuArea>
+      <menu>
+        <dropContainer>
+          <button
+            id="FindUser"
+            class="dropButton"
+            onclick="showDrop('FilterDrop')"
+          ></button>
+          <drop id="FilterDrop" class="drop">
+            <button onclick="filterBy('likes DESC')">Sort By Hearts</button>
+            <button onclick="filterBy('datetime')">Sort By Date Oldest</button>
+            <button onclick="filterBy('datetime DESC')">
+              Sort By Date Newest
+            </button>
+          </drop>
+        </dropContainer>
 
-    <menu>
-      <section>
-        <h2>Full Name :</h2>
-        <input type="text" id="FullNameCreate" />
-        <h2>Email :</h2>
-        <input type="text" id="EmailCreate" />
-        <h2>Password :</h2>
-        <input type="password" id="PasswordCreate" /> <br />
-        <br />
-        <button id="CreateAccount">Create Account</button>
-      </section>
+        <button id="CreatePost" class="normalButton">Create Post</button>
+      </menu>
+      <menu id="menuLogin">
+        <dropContainer>
+          <button
+            id="FindUser"
+            class="dropButton"
+            onclick="showDrop('FilterDrop')"
+          ></button>
+          <drop id="FilterDrop" class="drop">
+            <button onclick="filterBy('likes DESC')">Sort By Hearts</button>
+            <button onclick="filterBy('datetime')">Sort By Date Oldest</button>
+            <button onclick="filterBy('datetime DESC')">
+              Sort By Date Newest
+            </button>
+          </drop>
+        </dropContainer>
+        <button
+          id="Login"
+          class="normalButton"
+          onclick='window.location.href="/User";'
+        >
+          Login
+        </button>
+      </menu></menuArea
+    >
 
-      <section id="Login">
-        <h2>Email :</h2>
-        <input type="text" id="EmailLogin" />
-        <h2>Password :</h2>
-        <input type="password" id="PasswordLogin" /> <br />
-        <br />
-        <button id="LoginBtn">Login</button>
-      </section>
-    </menu>
+    <article></article>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/public/Directory/Login/Login.js"></script>
+    <script src="/public/Directory/Stories/Stories.js"></script>
   </body>
 </html>

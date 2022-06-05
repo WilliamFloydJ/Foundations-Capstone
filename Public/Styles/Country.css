@@ -2,32 +2,63 @@ body {
   margin: 0%;
   font-size: 5vw;
 }
-#HomeBody {
-  background-image: url(/public/Images/TankBackground.png);
+#USHome {
+  background: url(/public/Images/USABackground.webp) no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-
+#UkHome {
+  background: url(/public/Images/RAF.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#SovietHome {
+  background: url(/public/Images/Soviet-Union.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 section {
   display: flex;
   position: relative;
-  justify-content: space-between;
-  margin: 2vh 2vw 2vh 2vw;
+  justify-content: space-evenly;
+  padding: 0%;
+  margin-top: 2%;
+}
+
+#UkHome section {
+  height: fit-content;
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  padding: 0%;
+  margin-top: 2%;
 }
 
 article {
   box-shadow: inset 2px 4px 4px #000000;
   display: flex;
-  flex-direction: column;
   font-family: "Reem Kufi";
-  position: relative;
-  width: 15vw;
-  font-size: 35%;
+
   align-items: center;
-  justify-content: space-evenly;
-  height: 30vw;
-  background-color: #35502ed2;
+  width: 45vw;
+  font-size: 35%;
+  flex-direction: column;
+  position: relative;
+
+  height: fit-content;
+  background-color: #35502ef8;
   border-radius: 1vh;
+  margin: 2vw;
 }
 article h2 {
+  height: fit-content;
   font-size: 80%;
   background-color: #1e3f20;
   color: #dcf3e2;
@@ -35,18 +66,19 @@ article h2 {
   filter: drop-shadow(1px 2px 3px #000000);
   border-radius: 0.75vh;
   margin-bottom: 0%;
+  width: fit-content;
 }
 #CenterArticle {
   width: 25vw;
 }
 article img {
-  margin-top: 0%;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
   border-radius: 1vh;
   position: relative;
-  max-width: 100%;
+  max-width: 75%;
   height: auto;
   filter: drop-shadow(0px 4px 8px #000000);
-  width: 95%;
 }
 #CenterImgArticle {
   max-width: 75%;
@@ -58,11 +90,15 @@ article p {
   margin-top: 0px;
   padding: 2px;
   margin-bottom: 2px;
+  margin-top: 5px;
+  align-self: flex-start;
   margin-right: 0.5vw;
-  font-size: 50%;
+  font-size: 70%;
   background-color: #407946be;
-  border-radius: 5%;
+  border-radius: 2%;
   filter: drop-shadow(0px 4px 8px #000000);
+  width: fit-content;
+  height: fit-content;
 }
 #PaperBack {
   filter: drop-shadow(2px 5px 8px #000000);
@@ -73,14 +109,13 @@ article p {
   position: absolute;
 }
 header {
-  position: absolute;
   left: 33.5%;
   font-family: "Reem Kufi";
   border-radius: 1vh;
   background-color: #4a7856;
   text-align: center;
   border-style: solid;
-
+  top: 10vh;
   border-width: 0.5vw;
   border-color: #1a1f16;
   color: white;
@@ -89,18 +124,39 @@ header {
   filter: drop-shadow(0px 4px 8px #000000);
   z-index: 2;
 }
+#UkHome header {
+  left: 33.5%;
+  font-family: "Reem Kufi";
+  border-radius: 1vh;
+  background-color: #4a7856;
+  text-align: center;
+  border-style: solid;
+  top: 10vh;
+  border-width: 0.5vw;
+  border-color: #1a1f16;
+  color: white;
+  width: 30vw !important;
+  height: 15vw !important;
+  filter: drop-shadow(0px 4px 8px #000000);
+  z-index: 2;
+  padding: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #AmericaImgFlag {
   width: 28vw;
   position: relative;
   max-width: 100%;
-  margin-top: 8.5%;
+
   height: auto;
   filter: drop-shadow(0px 4px 8px #000000);
   border-radius: 10%;
   z-index: 1;
 }
 
-header > div {
+#nonUkDiv {
   display: inline-block;
   position: relative;
   align-self: center;
@@ -110,7 +166,23 @@ header > div {
   z-index: 2;
   height: 82.5%;
 }
-
+#ukDiv {
+  top: 8%;
+  background-color: #1a1f16;
+  width: 50vh;
+  z-index: 2;
+  height: 15vw;
+  min-height: fit-content;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+#ukDiv h1 {
+  display: flex;
+  align-self: center;
+  margin: 0%;
+  margin-top: 2.5vw;
+}
 header h1 {
   display: inline;
   position: relative;
@@ -201,7 +273,6 @@ button:hover {
 button:active {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0 0);
 }
-
 nav a {
   display: flex;
   align-items: center;
