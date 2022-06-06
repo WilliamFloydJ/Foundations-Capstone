@@ -24,6 +24,37 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+#FranceHome {
+  background: url(/public/Images/French\ Man.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#ItalyHome {
+  background: url(/public/Images/Italy-Oil.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#JapanHome {
+  background: url(/public/Images/Japan.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#GermanyHome {
+  background: url(/public/Images/nazi-germany.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#BottomFiller {
+  height: 80vh;
+}
 section {
   display: flex;
   position: relative;

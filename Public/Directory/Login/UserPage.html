@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User</title>
+    <link rel="stylesheet" href="/public/Styles/Login.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Reem Kufi"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <a href="/public/Directory/UsaHome.html" target="_parent">
+        <button class="imageButton" id="UsaButton"></button
+      ></a>
+      <a href="/public/Directory/UKHome.html" target="_parent">
+        <button class="imageButton" id="UkButton"></button
+      ></a>
+      <a href="/public/Directory/RussiaHome.html" target="_parent">
+        <button class="imageButton" id="RussiaButton"></button
+      ></a>
+      <a href="/public/Directory/FranceHome.html" target="_parent">
+        <button class="imageButton" id="FranceButton"></button>
+      </a>
+      <a href="/User" target="_parent">
+        <button class="normalButton">User</button>
+      </a>
+
+      <a href="/Stories">
+        <button class="normalButton">Stories</button>
+      </a>
+      <a href="/">
+        <button class="normalButton">Home</button>
+      </a>
+      <a href="/public/Directory/ItalyHome.html" target="_parent">
+        <button class="imageButton" id="ItalyButton"></button
+      ></a>
+      <a href="/public/Directory/japanHome.html" target="_parent">
+        <button class="imageButton" id="JapanButton"></button
+      ></a>
+      <a href="/public/Directory/GermanyHome.html" target="_parent">
+        <button class="imageButton" id="GermanyButton"></button
+      ></a>
+    </nav>
+
+    <menu>
+      <div>
+        <section id="sectionOne">
+          <p>Full Name:</p>
+          <h2 id="name"></h2>
+        </section>
+        <section id="posts">
+          <p>Posts:</p>
+        </section>
+      </div>
+
+      <section id="sectionTwo">
+        <h1>Personal Info:</h1>
+        <div id="ageDiv">
+          <h2 class="personalInfo">Age:</h2>
+          <h3 id="age"></h3>
+        </div>
+        <div id="backgroundDiv">
+          <h2 class="personalInfo">Personal Background:</h2>
+          <h3 id="personalBackground" class="background"></h3>
+        </div>
+        <div id="rankDiv">
+          <h2 class="personalInfo">Rank: (If in the Military)</h2>
+
+          <h3 id="rank"></h3>
+        </div>
+      </section>
+    </menu>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/public/Directory/Login/UserPage.js"></script>
+  </body>
+</html>

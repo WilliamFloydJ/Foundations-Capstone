@@ -208,6 +208,14 @@ const createPosts = (posts) => {
     const commentsNumber = document.createElement("h3");
     const commentsButton = document.createElement("button");
     let { postid, message, userid, datetime, likes } = element;
+
+    h2.setAttribute(
+      "onclick",
+      `
+      window.location.href = "/UserPage/?userId=${userid}";
+    `
+    );
+
     datetime = datetime.slice(0, 10);
     axios.put(`/users/${userid}`).then((userRes) => {
       let { fullname, rank } = userRes.data[0];

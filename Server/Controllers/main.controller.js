@@ -52,6 +52,20 @@ module.exports = {
       });
     }
   },
+  UserPage: (req, res) => {
+    var options = {
+      root: path.join(__dirname, "../../Public/Directory/Login"),
+    };
+
+    var fileName = "UserPage.html";
+    res.sendFile(fileName, options, function (err) {
+      if (err) {
+        rollbar.critical("User Page will not load");
+      } else {
+        rollbar.info("user page loaded Successfully");
+      }
+    });
+  },
   UserFind: (req, res) => {
     const userId = req.params.id;
     sequelize

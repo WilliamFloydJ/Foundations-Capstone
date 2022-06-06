@@ -139,7 +139,6 @@ updateBtnElement.addEventListener("click", () => {
 });
 
 const createPosts = (posts) => {
-  console.log(posts);
   posts.forEach((element) => {
     const article = document.getElementById("posts");
     const post = document.createElement("post");

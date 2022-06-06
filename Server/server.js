@@ -37,11 +37,16 @@ const {
   StoriesUser,
   StoryDelete,
   CommentDelete,
+  UserPage,
 } = require("./Controllers/main.controller.js");
 
 app.use("/server", express.static(path.join(__dirname, "./")));
 
 app.get("/User", User);
+
+app.get("/UserPage", UserPage);
+
+app.put("/users/:id", UserFind);
 
 app.use("/public", express.static(path.join(__dirname, "../Public")));
 
@@ -72,8 +77,6 @@ app.post("/Stories/creation", StoryCreation);
 app.put("/stories/comments/:id", CommentFind);
 
 app.put("/stories/hearts/:id", PostHeartsAdd);
-
-app.put("/users/:id", UserFind);
 
 app.post("/stories/comment/creation", CommentCreation);
 
