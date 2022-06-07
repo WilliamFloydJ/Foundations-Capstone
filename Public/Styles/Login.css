@@ -213,7 +213,20 @@ post div {
   flex-direction: row;
   align-items: center;
 }
-section input,
+section input {
+  background-color: #65885d;
+  padding: 1vw;
+  border-radius: 1vw;
+  width: 15vw;
+  filter: drop-shadow(0px 2px 4px #000000);
+
+  color: white;
+  font-size: 1vw;
+  text-shadow: 0px 1px 3px #000000;
+
+  border: none;
+  outline: none;
+}
 section span {
   background-color: #65885d;
   padding: 1vw;
@@ -228,7 +241,6 @@ section span {
   border: none;
   outline: none;
 }
-
 section button {
   color: white;
   text-shadow: 1px 1px 3px #000000;

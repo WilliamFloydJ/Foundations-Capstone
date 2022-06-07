@@ -245,7 +245,10 @@ const createPosts = (posts) => {
         post.id = postid;
         commentsButton.setAttribute(
           "onclick",
-          `if(commentOut === false){
+          `
+               const post = document.getElementById("${postid}")
+          const commentSection = document.querySelector("commentSection");
+          if(commentOut === false){
                      getComments(${postid})
                     }else if(post.contains(commentSection)){ 
                     postInCreation = false;
@@ -263,7 +266,7 @@ const createPosts = (posts) => {
         if (rank) {
           h2.textContent = `${rank} ${fullname}`;
         } else {
-          h2.textContent = `${fulldame}`;
+          h2.textContent = `${fullname}`;
         }
         dateH4.textContent = `${datetime}`;
         p.innerHTML = `${message}`;
@@ -286,6 +289,7 @@ const createPosts = (posts) => {
 };
 
 axios.get("/stories/all").then((getRes) => {
+  console.log(getRes.data);
   const storiesList = getRes.data;
   createPosts(storiesList);
 });

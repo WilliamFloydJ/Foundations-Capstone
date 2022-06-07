@@ -17,11 +17,14 @@ createAccount.addEventListener("click", () => {
   axios
     .post("/createAccount", user)
     .then((res) => {
-      if (res.data.code === 200 || res.data?.user?.id) {
-        window.location.href = "/Public/Directory/Login/User.html";
+      if (res.data.code === 200 || res.data.id) {
+        window.location.href = "/public/Directory/Login/User.html";
+        console.log(res.data.message);
+        createAccount.removeAttribute("disabled");
+      } else {
+        console.log(res.data.message);
+        createAccount.removeAttribute("disabled");
       }
-      console.log(res.data.message);
-      createAccount.removeAttribute("disabled");
     })
     .catch((err) => {
       console.log("Something went wrong creating your account.");
@@ -40,7 +43,7 @@ loginBtn.addEventListener("click", () => {
     .post("/login", user)
     .then((res) => {
       if (res.data.code === 200 || res.data.id) {
-        window.location.href = "/Public/Directory/Login/User.html";
+        window.location.href = "/public/Directory/Login/User.html";
         console.log(res.data.message);
         loginBtn.removeAttribute("disabled");
       } else {

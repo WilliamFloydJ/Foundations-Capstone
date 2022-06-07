@@ -29,9 +29,6 @@ let submitBtn = false;
 axios
   .get("/server/session")
   .then((res) => {
-    if (res.data.hasOwnProperty("user") === false) {
-      window.location.href = "/User";
-    }
     fullname = res.data.user.fullName;
     rank = res.data.user.rank;
     userid = res.data.user.id;
@@ -59,7 +56,7 @@ axios
       submitBtn = true;
     }
 
-    if (res.data.user?.background) {
+    if (res.data.user.background !== null && res.data.user.background !== "") {
       if (
         res.data.user.background.trim().length !== 0 &&
         res.data.user.background !== "&nbsp;"
@@ -72,7 +69,7 @@ axios
     } else {
       backgroundInputField.id = "backgroundInput";
       backgroundElement.style.visibility = "hidden";
-      backgroundElement.appendChild(backgroundInputField);
+      backgroundDiv.appendChild(backgroundInputField);
       backgroundInputField.style.visibility = "visible";
       submitBtn = true;
     }
@@ -120,7 +117,6 @@ submitBtnElement.addEventListener("click", () => {
     addingUser.rank = rankInputField.value;
   }
   axios.post("/server/session/change", addingUser);
-  axios.get("/server/session").then((res) => {});
 
   window.location.reload();
 });
@@ -314,7 +310,11 @@ const createComment = (fullName, rank, message, date, userId, commentid) => {
     comments.appendChild(deleteBtn);
   }
   h6.textContent = date;
-  h4.textContent = `${rank} ${fullName}`;
+  if (rank !== "" && rank !== null) {
+    h4.textContent = `${rank} ${fullName}`;
+  } else {
+    h4.textContent = `${fullName}`;
+  }
   p.innerHTML = message;
 
   comments.appendChild(h6);
@@ -334,8 +334,11 @@ const createCommentUi = (fullName, rank, postId) => {
     const createCommentButton = document.createElement("button");
 
     prevCreateCommentButton.remove();
-
-    h4.textContent = `${rank} ${fullName}`;
+    if (rank !== "" && rank !== null) {
+      h4.textContent = `${rank} ${fullName}`;
+    } else {
+      h4.textContent = `${fullName}`;
+    }
 
     span.setAttribute("contenteditable", true);
     span.setAttribute("role", "textbox");
@@ -366,9 +369,7 @@ const createCommentUi = (fullName, rank, postId) => {
         })
         .then((res) => {
           postInCreation = false;
-          getComments(${postId});
-        commentSection = document.querySelector("commentSection"); 
-        commentSection.remove();
+          window.location.reload()
         });
     });`
     );

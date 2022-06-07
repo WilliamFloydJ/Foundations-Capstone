@@ -235,9 +235,6 @@ module.exports = {
                   `select age, background, rank from users where userid = ${dbRes2[0][0].userid}`
                 )
                 .then((dbRes3) => {
-                  age = dbRes3[0][0].age;
-                  background = dbRes3[0][0].background;
-                  rank = dbRes3[0][0].rank;
                   req.session.user = {
                     id: dbRes2[0][0].userid,
                     fullName: fullName,
@@ -247,9 +244,8 @@ module.exports = {
                     background: background,
                     rank: rank,
                   };
+                  res.status(200).send(req.session.user);
                 });
-
-              res.status(201).send({ message: "Account Created!", code: 200 });
             })
             .catch((err) => console.log(err));
         } else {
